@@ -1,7 +1,6 @@
 // Required dependencies
 var express = require("express");
 var exphbs = require("express-handlebars");
-var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 
 // Our scraping tools
@@ -20,6 +19,9 @@ var app = express();
 
 // Set up an Express Router
 var router = express.Router();
+
+// Require our routes file pass our router object
+require("./config/routes")(router);
 
 // Make public a static folder
 app.use(express.static("public"));
@@ -44,7 +46,6 @@ mongoose.connect(db, function (error) {
         console.log("Mongoose connection is successful!")
     }
 });
-
 
 // Have every request go through our router middle ware
 app.use(router);

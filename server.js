@@ -20,11 +20,12 @@ var app = express();
 // Set up an Express Router
 var router = express.Router();
 
+// Make public a static folder
+app.use(express.static("public"));
+
 // Require our routes file pass our router object
 require("./config/routes")(router);
 
-// Make public a static folder
-app.use(express.static("public"));
 
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));

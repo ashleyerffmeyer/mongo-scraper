@@ -1,5 +1,5 @@
-// Require request and cheerio to make scrapes
-var request = require("axios");
+// Require axios and cheerio to make scrapes
+var axios = require("axios");
 var cheerio = require("cheerio");
 
 var scrape = function (cb) {

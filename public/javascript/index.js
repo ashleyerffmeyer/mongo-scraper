@@ -97,7 +97,7 @@ $(document).ready(function () {
         // Update to an existing record, so use PATCH method
         $.ajax({
             method: "PATCH",
-            url: "/api/headlines",
+            url: "/api/headlines/",
             data: articleToSave
         })
             .then(function (data) {
@@ -111,7 +111,7 @@ $(document).ready(function () {
 
     // handleArticleScrape function is run when "scrape new article button" is clicked
     function handleArticleScrape() {
-        $.get("/api/fetch")
+        $.get("/api/fetch/")
             .then(function (data) {
                 initPage();
                 bootbox.alert("<h3 class = 'text-center m-top-80'>" + data.message + "<h3>");
